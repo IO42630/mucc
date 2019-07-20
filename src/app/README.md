@@ -33,3 +33,7 @@ This ensures the user never suspects something went horribly wrong.
 - Make UI prettier.
 - Make code prettier.
 
+
+### Screenshot
+
+![UI](screen.png)
