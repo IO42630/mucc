@@ -7,8 +7,7 @@ public class Execute {
 
 
     /**
-     *
-     * @param  cmd an array representing a shell command
+     * @param cmd an array representing a shell command
      * @return <i>TwoBr</i>  class, containing two BufferedReaders,
      * <i>output</i> and  <i>error</i>
      * @see <i>output</i>  BufferedReader, corresponds to STDOUT

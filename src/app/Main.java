@@ -13,10 +13,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    static String foo;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("layout.fxml"));
         Scene scene = new Scene(root, 300, 275);
 

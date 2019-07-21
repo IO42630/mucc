@@ -16,6 +16,9 @@ import java.util.Map;
 
 import app.Artifacts.MFile;
 
+/***
+ * Controller class for JavaFX. Contains the application logic.
+ */
 public class Controller {
 
 

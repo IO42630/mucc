@@ -12,28 +12,24 @@ import app.Artifacts.MFile;
 
 public class Routines {
 
-
-    Execute x = null;
-
-    Tools tools = new Tools();
-    Write write = new Write();
+    Execute x;
+    Tools tools;
 
 
     public Routines() {
         this.x = new Execute();
-
         this.tools = new Tools();
     }
 
 
     /**
-     * [1] Write output of <b>find srcdir</b> to <b>/tmp/find</b> <br>
-     * [2] Read <b>/tmp/find</b> into <b>List>String></b> <br>
-     * [3] Add <b>List>String></b> entries to <b>Map>String,File></b> , where
+     * [1] Write output of <b>find srcdir</b> to <b>/tmp/find</b> .<br>
+     * [2] Read <b>/tmp/find</b> into <b>List< String /></b> .<br>
+     * [3] Add <b>List< String /></b> entries to <b>Map>String,File></b> , where
      * <b>String</b> is an <b>int</b> key. <br>
      *
-     * @param srcdir
-     * @param type   file OR directory
+     * @param srcdir <i>String</i>
+     * @param type   <i>String</i>  "file" OR "dir" , pick what type will be loaded.
      * @return filepool
      */
     public Map<Integer, File> loadPool(String srcdir, String type) {
@@ -51,7 +47,7 @@ public class Routines {
         int j = 0;
         for (int i = 0; i < lines.size(); i++) {
             File file = new File(lines.get(i));
-            if (type == "directory" && file.isDirectory() || type == "file" && file.isFile()) {
+            if (type == "dir" && file.isDirectory() || type == "file" && file.isFile()) {
                 filepool.put(j, file);
                 j++;
             }
@@ -59,7 +55,12 @@ public class Routines {
         return filepool;
     }
 
-
+    /**
+     * Calculate md5 for each file in <b>pool</b> .
+     *
+     * @param pool Map< Integer, File />
+     * @return Map<                Integer               ,                               MFile                               />
+     */
     public Map<Integer, MFile> md5Pool(Map<Integer, File> pool) {
         Map<Integer, MFile> md5Pool = new HashMap<>();
         for (int i = 0; i < pool.size(); i++) {
@@ -69,7 +70,10 @@ public class Routines {
         return md5Pool;
     }
 
-
+    /**
+     * @param md5Pool Map< Integer, MFile /> , a map containing files and their md5.
+     * @return Map<        Integer       ,               MFile               /> of duplicates contained in <b>md5Pool</b>
+     */
     public Map<Integer, MFile> doubles(Map<Integer, MFile> md5Pool) {
         Map<Integer, MFile> doubles = new HashMap<>();
         int d = 0;
