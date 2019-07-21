@@ -11,7 +11,7 @@ It also displays some information about what is happening.
 This ensures the user never suspects something went horribly wrong.
 
 
-### Package Contents
+### Package Contents of `app` 
 
 | Class         | Description |
 |---------------|-------------|
