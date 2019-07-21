@@ -11,7 +11,7 @@ It also displays some information about what is happening.
 This ensures the user never suspects something went horribly wrong.
 
 
-### Package Contents of `app` 
+### Contents of `src/app`
 
 | Class         | Description |
 |---------------|-------------|
@@ -36,4 +36,4 @@ This ensures the user never suspects something went horribly wrong.
 
 ### Screenshot
 
-![UI](screen.png)
+![UI](src/app/screen.png)
