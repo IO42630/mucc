@@ -3,9 +3,9 @@ package app;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Tools {
+class Tools {
 
-    Execute x;
+    private final Execute x;
 
     public Tools() {
         x = new Execute();

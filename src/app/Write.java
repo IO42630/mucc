@@ -7,7 +7,7 @@ import java.util.Map;
 
 import app.Artifacts.MFile;
 
-public class Write {
+class Write {
 
     /**
      * Write <b>text</b> to file at <b>path</b> .

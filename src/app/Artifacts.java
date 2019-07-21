@@ -4,11 +4,11 @@ import java.io.File;
 
 public class Artifacts {
 
-    Tools tools = new Tools();
+    private Tools tools = new Tools();
 
     /**
-     * @param file
-     * @return
+     * @param file <i>File</i>
+     * @return file with md5 field
      */
     public MFile getMFile(File file) {
         MFile mfile = new MFile();

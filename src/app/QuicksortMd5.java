@@ -4,7 +4,7 @@ import app.Artifacts.MFile;
 
 import java.util.Map;
 
-public class QuicksortMd5 {
+class QuicksortMd5 {
     private Map<Integer, MFile> md5Pool;
     private int i;
     private int j;

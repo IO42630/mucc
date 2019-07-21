@@ -10,15 +10,13 @@ import java.util.Map;
 
 import app.Artifacts.MFile;
 
-public class Routines {
+class Routines {
 
-    Execute x;
-    Tools tools;
+    private final Execute x;
 
 
     public Routines() {
         this.x = new Execute();
-        this.tools = new Tools();
     }
 
 
@@ -43,10 +41,10 @@ public class Routines {
             e.printStackTrace();
         }
         // [3]
-        Map<Integer, File> filepool = new HashMap<Integer, File>();
+        Map<Integer, File> filepool = new HashMap<>();
         int j = 0;
-        for (int i = 0; i < lines.size(); i++) {
-            File file = new File(lines.get(i));
+        for (String line : lines) {
+            File file = new File(line);
             if (type == "dir" && file.isDirectory() || type == "file" && file.isFile()) {
                 filepool.put(j, file);
                 j++;

@@ -1,10 +1,8 @@
 package app;
 
-import javafx.beans.property.StringProperty;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
 
@@ -55,7 +53,7 @@ public class Controller {
 
         Task<Void> loadDirTask = new Task<Void>() {
             @Override
-            public Void call() throws Exception {
+            public Void call() {
 
                 loadDirState.setText("");
                 calcMd5State.setText("");
@@ -103,7 +101,7 @@ public class Controller {
 
         Task<Void> delDoubleTask = new Task<Void>() {
             @Override
-            public Void call() throws Exception {
+            public Void call()  {
 
                 for (int i = 0; i < doubles.size(); i++) {
                     new Execute().execute(new String[]{"rm", doubles.get(i).file.getAbsolutePath()});
