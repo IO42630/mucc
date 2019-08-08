@@ -29,7 +29,7 @@
     />
 
     <Text
-            text="Loading Directory."
+            text="Load Directory."
             GridPane.rowIndex="1"
             GridPane.columnIndex="0"
     />
@@ -40,7 +40,7 @@
     />
 
     <Text
-            text="Calculating Md5."
+            text="Calculate Md5."
             GridPane.rowIndex="2"
             GridPane.columnIndex="0"
     />
@@ -51,7 +51,7 @@
     />
 
     <Text
-            text="Sorting Files."
+            text="Sort Files."
             GridPane.rowIndex="3"
             GridPane.columnIndex="0"
     />
@@ -62,23 +62,23 @@
     />
 
     <Text
-            text="Finding Doubles."
+            text="Find Duplicates."
             GridPane.rowIndex="4"
             GridPane.columnIndex="0"
     />
 
-    <Text   fx:id="findDoubleState"
+    <Text   fx:id="findDuplicateState"
             GridPane.rowIndex="4"
             GridPane.columnIndex="1"
     />
 
     <Text
-            text="Deleting Doubles."
+            text="Delete Duplicates."
             GridPane.rowIndex="5"
             GridPane.columnIndex="0"
     />
 
-    <Text   fx:id="delDoubleState"
+    <Text   fx:id="delDuplicateState"
             GridPane.rowIndex="5"
             GridPane.columnIndex="1"
     />
@@ -106,7 +106,7 @@
     />
 
     <Text fx:id="doubleNr"
-          text="Number of Doubles:"
+          text="Number of Duplicates:"
           GridPane.rowIndex="8"
           GridPane.columnIndex="0"
     />
@@ -115,7 +115,7 @@
     <Button text="Delete"
             GridPane.rowIndex="8"
             GridPane.columnIndex="1"
-            onAction="#deleteDoubles"/>
+            onAction="#deleteDuplicates"/>
 
 
 </GridPane>

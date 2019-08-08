@@ -33,10 +33,10 @@ public class Controller {
     protected Text sortFileState;
 
     @FXML
-    protected Text findDoubleState;
+    protected Text findDuplicateState;
 
     @FXML
-    protected Text delDoubleState;
+    protected Text delDuplicateState;
 
     @FXML
     protected Text fileNr;
@@ -58,10 +58,10 @@ public class Controller {
                 loadDirState.setText("");
                 calcMd5State.setText("");
                 sortFileState.setText("");
-                findDoubleState.setText("");
-                delDoubleState.setText("");
+                findDuplicateState.setText("");
+                delDuplicateState.setText("");
                 fileNr.setText("Number of Files:");
-                doubleNr.setText("Number of Doubles:");
+                doubleNr.setText("Number of Duplicates:");
 
 
                 Path path = Paths.get(dir.getText());
@@ -86,8 +86,8 @@ public class Controller {
 
                     doubles = new Routines().doubles(qsMd5Pool);
                     new Write().textMd5Pool("doubles", doubles);
-                    findDoubleState.setText("OK.");
-                    doubleNr.setText("Number of Doubles:  " + doubles.size());
+                    findDuplicateState.setText("OK.");
+                    doubleNr.setText("Number of Duplicates:  " + doubles.size());
 
                 }
                 return null;
@@ -97,9 +97,9 @@ public class Controller {
     }
 
     @FXML
-    protected void deleteDoubles() {
+    protected void deleteDuplicates() {
 
-        Task<Void> delDoubleTask = new Task<Void>() {
+        Task<Void> delDuplicateTask = new Task<Void>() {
             @Override
             public Void call()  {
 
@@ -107,11 +107,11 @@ public class Controller {
                     new Execute().execute(new String[]{"rm", doubles.get(i).file.getAbsolutePath()});
 
                 }
-                delDoubleState.setText("OK.");
+                delDuplicateState.setText("OK.");
                 return null;
             }
         };
-        new Thread(delDoubleTask).start();
+        new Thread(delDuplicateTask).start();
     }
 
 
