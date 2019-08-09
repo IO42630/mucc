@@ -2,10 +2,12 @@ package app;
 
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 
+import java.awt.event.ActionEvent;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,12 +15,13 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 import app.Artifacts.MFile;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.Window;
 
 /***
  * Controller class for JavaFX. Contains the application logic.
  */
 public class Controller {
-
 
     Map<Integer, MFile> doubles;
 
@@ -45,7 +48,28 @@ public class Controller {
     protected Text doubleNr;
 
     @FXML
-    protected TextField dir;
+    protected TextField directoryField;
+
+
+    @FXML
+    protected void openDir(){
+        Window stage = loadDirState.getScene().getWindow();
+
+
+        final DirectoryChooser directoryChooser = new DirectoryChooser();
+        directoryChooser.setTitle("Select Directory.");
+        directoryChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+
+        TextArea textArea = new TextArea();
+        textArea.setMinHeight(70);
+
+        File dir = directoryChooser.showDialog(stage);
+        if (dir != null){
+            directoryField.setText(dir.getAbsolutePath());
+        }else{
+            //textArea.setText(null);
+        }
+    }
 
 
     @FXML
@@ -64,14 +88,14 @@ public class Controller {
                 doubleNr.setText("Number of Duplicates:");
 
 
-                Path path = Paths.get(dir.getText());
+                Path path = Paths.get(directoryField.getText());
 
                 if (!Files.isDirectory(path)) {
                     loadDirState.setText("ERROR.");
 
                 } else {
 
-                    Map<Integer, File> pool = new Routines().loadPool(dir.getText(), "file");
+                    Map<Integer, File> pool = new Routines().loadPool(directoryField.getText(), "file");
                     new Write().textPool("pool", pool);
                     loadDirState.setText("OK.");
                     fileNr.setText("Number of Files:  " + pool.size());
