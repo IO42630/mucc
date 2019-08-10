@@ -1,15 +1,28 @@
-### What is `mucc`?
-`mucc` is an example for interactions between Linux, Java and JavaFX.
-It is a tool for purging duplicates from
-a filesystem.
+### About 
+mucc is a tool for processing data recovered by scalpel. 
+It's features include:
+1. Splitting PDF files into sub-files.
+2. Deleting duplicate files, which can be used independently. 
 
-It does this by calculating a hash of each file
-and sorting the files by hash.
-If two files have the same hash, the older file will be deleted.
+<br>
+<br>
 
-It also displays some information about what is happening. 
-This ensures the user never suspects something went horribly wrong.
+### How it Works
 
+##### Retrieving Sub-Files
+
+scalpel parses a disk image for %PDF headers 
+and %EOF footers.
+If max_filsize is set high, the generated files will often consist of several
+concatenated sub-files.
+Here mucc finds the nested %PDF and %EOF tags 
+and returns the files with byte sized precision.
+
+##### Deleting Duplicates
+Here mucc calculates the md5 hash of each file and deletes the identical files.
+
+<br>
+<br>
 
 ### Contents of `src/app`
 
@@ -21,19 +34,18 @@ This ensures the user never suspects something went horribly wrong.
 | layout.fxml   | Contains layout data.|
 | Main          | Main JavaFX class. Run from here.|
 | QuicksortMd5  | Quicksort algorithm.|
-| README.md     | You are here.|
-| Routines      | Higher level routines called by Controller.|
-| Tools         | Simple tools.|
+| routines      | Contains higher level routines called by Controller.|
+| Tools         | Simple tools used by other classes.|
 | Write         | Writes to /tmp. Used for data storage.|
 
 
 ### Issues and Features
-- Add proper directory selection.
 - Fix issues where nested duplicates would not be deleted on first pass.
-- Make UI prettier.
 - Make code prettier.
-
+- Add scalpel integration.
+- Replace "__" with progress indicators for states.
 
 ### Screenshot
 
-![UI](src/app/screen.png)
+![UI](src/app/img/screen.png)
+
