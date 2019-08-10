@@ -41,7 +41,7 @@ Here mucc calculates the md5 hash of each file and deletes the identical files.
 <br>
 <br>
 
-## Issues and Features
+## Issues
 - Fix issues where nested duplicates would not be deleted on first pass.
 - Make code prettier.
 - Add scalpel integration.
