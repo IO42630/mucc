@@ -42,10 +42,12 @@ Here mucc calculates the md5 hash of each file and deletes the identical files.
 <br>
 
 ## Issues
-- Fix issues where nested duplicates would not be deleted on first pass.
-- Make code prettier.
-- Add scalpel integration.
-- Replace "__" with progress indicators for states.
+
+- %PDF tags are not parsed correctly if cat output contains multiple tabs.
+- Nested duplicates are not be deleted on first pass.
+- Code formatting, documentation and IDE warnings. 
+- `scalpel` integration is missing.
+- States require progress indicator instead of "__".
 
 <br>
 <br>
