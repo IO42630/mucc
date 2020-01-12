@@ -1,4 +1,4 @@
-###Table of Contents
+### Table of Contents
 1. [About](#about)
 2. [Getting Started](#getting-started)
 3. [Description](#description)
