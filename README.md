@@ -25,7 +25,7 @@ It's features include:
 <br>
 <br>
 
-### Descripton <a name="description"></a> 
+### Description <a name="description"></a> 
 
 ##### Retrieving Sub-Files
 
