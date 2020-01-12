@@ -1,4 +1,13 @@
-## About 
+###Table of Contents
+1. [About](#about)
+2. [Getting Started](#getting-started)
+3. [Description](#description)
+4. [Package Contents](#package-contents)
+5. [Issues](#issues)
+6. [Screenshot](#screenshot)
+
+
+### About <a name="about"></a> 
 mucc is a tool for processing data recovered by scalpel. 
 It's features include:
 1. Splitting PDF files into sub-files.
@@ -7,9 +16,18 @@ It's features include:
 <br>
 <br>
 
-## How it Works
+### Getting Started <a name="getting-started"></a> 
+* Download and extract the [JavaFX SDK](https://gluonhq.com/products/javafx/).
+* Add the `<your path>/javafx-sdk-11/lib/`as a library to your project.
+* Add `--module-path <your path>/javafx-sdk-11/lib --add-modules=javafx.controls,javafx.fxml` to VM options.
+* Run
 
-#### Retrieving Sub-Files
+<br>
+<br>
+
+### Descripton <a name="description"></a> 
+
+##### Retrieving Sub-Files
 
 scalpel parses disk images for %PDF headers 
 and %EOF footers.
@@ -18,13 +36,13 @@ concatenated sub-files.
 Here mucc finds the nested %PDF and %EOF tags 
 and returns the files with byte sized precision.
 
-#### Deleting Duplicates
+##### Deleting Duplicates
 Here mucc calculates the md5 hash of each file and deletes the identical files.
 
 <br>
 <br>
 
-## Contents of `src/app`
+### Package Contents <a name="package-contents"></a> 
 
 | Class         | Description |
 |---------------|-------------|
@@ -41,7 +59,7 @@ Here mucc calculates the md5 hash of each file and deletes the identical files.
 <br>
 <br>
 
-## Issues
+### Issues <a name="issues"></a> 
 
 - %PDF tags are not parsed correctly if cat output contains multiple tabs.
 - Nested duplicates are not be deleted on first pass.
@@ -52,7 +70,7 @@ Here mucc calculates the md5 hash of each file and deletes the identical files.
 <br>
 <br>
 
-## Screenshot
+### Screenshot <a name="screenshot"></a> 
 
 ![UI](src/app/img/screen.png)
 
